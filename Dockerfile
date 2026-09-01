@@ -3,7 +3,9 @@ FROM node:22-bookworm-slim AS build
 WORKDIR /app
 
 COPY apps/OpenSign/package.json apps/OpenSign/package-lock.json ./
-RUN npm ci
+# The Railway service sets NODE_ENV=production, which would make npm ci skip
+# devDependencies -- and vite, which builds this client, is one of them.
+RUN npm ci --include=dev
 
 COPY apps/OpenSign ./
 
