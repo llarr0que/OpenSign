@@ -18,7 +18,11 @@ ENV NODE_ENV=production
 
 COPY --from=build /app/build ./build
 COPY --from=build /app/server.cjs ./server.cjs
+COPY --from=build /app/entrypoint.sh ./entrypoint.sh
+
+RUN chmod +x ./entrypoint.sh
 
 EXPOSE 3000
 
+ENTRYPOINT ["./entrypoint.sh"]
 CMD ["node", "server.cjs"]
