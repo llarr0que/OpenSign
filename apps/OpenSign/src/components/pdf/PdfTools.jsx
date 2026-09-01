@@ -234,13 +234,15 @@ function PdfTools(props) {
             </span>
           </>
         )}
-        <span
-          className="bg-gray-50 px-[4px] 2xl:py-[10px] cursor-pointer"
+        <button
+          type="button"
+          className="crm-signing-tool px-[4px] 2xl:py-[10px]"
           onClick={handleZoomIn}
           title={t("zoom-in")}
+          aria-label={t("zoom-in")}
         >
-          <i className="fa-light fa-magnifying-glass-plus text-gray-500 2xl:text-[25px]"></i>
-        </span>
+          <i className="fa-light fa-magnifying-glass-plus 2xl:text-[25px]" aria-hidden="true"></i>
+        </button>
 
         {!props.isDisableEditTools && (
           <>
@@ -260,13 +262,15 @@ function PdfTools(props) {
             </span>
           </>
         )}
-        <span
-          className="bg-gray-50 px-[4px] 2xl:py-[10px] cursor-pointer"
+        <button
+          type="button"
+          className="crm-signing-tool px-[4px] 2xl:py-[10px]"
           onClick={handleZoomOut}
           title={t("zoom-out")}
+          aria-label={t("zoom-out")}
         >
-          <i className="fa-light fa-magnifying-glass-minus text-gray-500 2xl:text-[30px]"></i>
-        </span>
+          <i className="fa-light fa-magnifying-glass-minus 2xl:text-[30px]" aria-hidden="true"></i>
+        </button>
       </span>
 
       <ModalUi

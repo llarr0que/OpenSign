@@ -15,21 +15,25 @@ function PrevNext({ pageNumber, allPages, changePage }) {
   return (
     <div className="flex items-center">
       <button
-        className="op-btn op-btn-neutral op-btn-xs md:op-btn-sm font-semibold text-xs"
+        type="button"
+        className="crm-page-control text-xs"
         disabled={pageNumber <= 1}
         onClick={previousPage}
+        aria-label={t("previous")}
       >
         <span className="block">
           <i className="fa-light fa-chevron-up" aria-hidden="true"></i>
         </span>
       </button>
-      <span className="text-xs text-base-content font-medium mx-2 2xl:text-[20px]">
+      <span className="crm-page-count text-xs font-semibold mx-2 2xl:text-[20px]">
         {pageNumber || (allPages ? 1 : "--")} {t("of")} {allPages || "--"}
       </span>
       <button
-        className="op-btn op-btn-neutral op-btn-xs md:op-btn-sm font-semibold text-xs"
+        type="button"
+        className="crm-page-control text-xs"
         disabled={pageNumber >= allPages}
         onClick={nextPage}
+        aria-label={t("next")}
       >
         <span className="block">
           <i className="fa-light fa-chevron-down" aria-hidden="true"></i>
