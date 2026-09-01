@@ -1810,7 +1810,7 @@ function PdfRequestFiles(
                       isGuestSignFlow
                       ? "border-[0.5px] border-gray-300"
                       : "op-card"
-                } relative overflow-hidden flex flex-col md:flex-row justify-between bg-base-300`}
+                } relative overflow-hidden flex flex-col md:flex-row justify-between bg-base-300 crm-signing-canvas`}
               >
                 {isUiLoading && (
                   <div className="absolute h-full w-full flex flex-col justify-center items-center z-[999] bg-[#e6f2f2]/80">

@@ -27,12 +27,12 @@ function SignerListComponent(props) {
 
   return (
     <div
-      className="rounded-xl mx-1 flex flex-row flex-grow-0 items-center py-[10px] mt-1"
+      className="crm-signer-card rounded-xl mx-1 flex flex-row flex-grow-0 items-center py-[10px] mt-1"
       style={{ background: checkSignerBackColor(props.obj) }}
     >
       <div
         style={{ background: checkUserNameColor(props.obj) }}
-        className="flex flex-shrink-0 w-[30px] h-[30px] rounded-full justify-center items-center mx-1"
+        className="crm-signer-avatar flex flex-shrink-0 w-[30px] h-[30px] rounded-full justify-center items-center mx-1"
       >
         <span className="text-[12px] text-center font-bold text-black uppercase">
           {getFirstLetter(

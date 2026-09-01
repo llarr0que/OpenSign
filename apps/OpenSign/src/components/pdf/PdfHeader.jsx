@@ -581,7 +581,8 @@ function Header(props) {
                     )}
                     {!props?.isSelfSign && (
                       <button
-                        className="op-btn op-btn-secondary op-btn-sm mr-[3px] shadow"
+                        type="button"
+                        className="op-btn op-btn-sm mr-[3px] crm-document-action crm-document-action--decline"
                         onClick={() => handleDeclinePdfAlert()}
                       >
                         {t("decline")}
@@ -590,7 +591,7 @@ function Header(props) {
                     {!props?.templateId && (
                       <button
                         type="button"
-                        className="op-btn op-btn-ghost text-base-content op-btn-sm mr-[3px]"
+                        className="op-btn op-btn-ghost text-base-content op-btn-sm mr-[3px] crm-document-action"
                         onClick={() => handleDownloadDoc()}
                       >
                         <i className="fa-light fa-arrow-down font-semibold lg:hidden"></i>
@@ -599,7 +600,7 @@ function Header(props) {
                     )}
                     <button
                       type="button"
-                      className="op-btn op-btn-primary op-btn-sm mr-[3px] shadow"
+                      className="op-btn op-btn-primary op-btn-sm mr-[3px] crm-document-action"
                       onClick={() => props?.embedWidgetsData()}
                     >
                       {t("finish")}
