@@ -915,8 +915,13 @@ function PdfRequestFiles(
                       ?.IsCompleted
                       ? `&completed=true`
                       : "";
+                    // Carry the document name so the success page's Download
+                    // button names the file after it instead of "Document.pdf".
+                    const docName = updatedDoc.updatedPdfDetails?.[0]?.Name
+                      ? `&docname=${encodeURIComponent(updatedDoc.updatedPdfDetails[0].Name)}`
+                      : "";
                     const params =
-                          `docid=${updatedDoc.updatedPdfDetails[0].objectId}&docurl=${encodeURIComponent(url)}${isCompleted}${fileAdapter}`;
+                          `docid=${updatedDoc.updatedPdfDetails[0].objectId}&docurl=${encodeURIComponent(url)}${isCompleted}${fileAdapter}${docName}`;
                     window.location.href = `/success?${params}`;
                   }
                 } else {

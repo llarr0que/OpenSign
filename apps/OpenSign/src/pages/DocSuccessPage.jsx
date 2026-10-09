@@ -37,8 +37,10 @@ const DocSuccessPage = () => {
       const docUrl = urlParams.get("docurl");
       const certificate = urlParams.get("certificate");
       const completed = urlParams?.get("completed") || false;
+      const docName = urlParams.get("docname") || "";
       const details = {
         objectId: docId,
+        Name: docName,
         SignedUrl: docUrl,
         CertificateUrl: certificate,
         IsCompleted: completed,
