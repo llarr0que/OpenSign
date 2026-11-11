@@ -16,6 +16,12 @@ COPY apps/OpenSign/ .
 
 RUN chmod +x entrypoint.sh
 
+# parse@8 locks the upload response body before checking Content-Length, so
+# every Parse.File.save({ progress }) fails once responses arrive gzipped
+# ("body stream is locked"). See the script for details; it fails the build
+# if the parse code no longer matches.
+RUN node scripts/patch-parse-progress.cjs
+
 ENV NODE_ENV=production
 ENV GENERATE_SOURCEMAP=false
 
